@@ -7,6 +7,23 @@
     <title>Bootstrap Training</title>
     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/bootstrap/css/reboot.css">
+    <style>
+        .sentence{
+            opacity: 0;
+            animation:fadeIn .5s forwards ;
+        }
+        @keyframes fadeIn {
+            from{
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+        }
+    </style>
 </head>
 
 <body>
@@ -89,8 +106,9 @@
         <section class="container py-4">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h2 class="display-4 mb-4">turning <span class="text-primary"> Visions </span>into <span
-                            class="text-success">Reality</span></h2>
+                    <!-- <h2 class="display-4 mb-4">turning <span class="text-primary"> Visions </span>into <span
+                            class="text-success">Reality</span></h2> -->
+                            <h2 class="display-4 mb-4 " id="welcomeSentence"></h2>
                     <p class="lead text-muted mb-4">
                         "At CodNiper, we are committed to delivering vibrant and dynamic websites that not only
                         captivate the audience but also ensure optimal responsiveness across all devices.
@@ -766,7 +784,30 @@
                     class="text-decoration-none text-secondary">CodNiper</a></div>
         </footer>
     </div>
-    <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 </body>
+<script>
+ const sentence="turning Visions into Reality"
+ const sentenceContainer=document.getElementById("welcomeSentence")
+ const words=sentence.split(" ") 
+ function displaySentence(){
+    words.forEach((word,index)=>{
+        const span=document.createElement("span")
+        span.className="sentence"
+        span.textContent=word
+        span.style.animationDelay=`${index*0.5}s`
+        if(index==1){
+            span.className="sentence text-primary"
+        }
+        if(index==3){
+            span.className="sentence text-success"
+  
+        }
+        span.style.marginRight="14px"
+        sentenceContainer.appendChild(span)
+    })
+ }  
+ window.onload=displaySentence() 
 
+</script>
 </html>
