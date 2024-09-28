@@ -7,26 +7,29 @@
     <title>Bootstrap Training</title>
     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/bootstrap/css/reboot.css">
-    <style>
+    <<<<<<< HEAD <style>
         .sentence{
-            opacity: 0;
-            animation:fadeIn .5s forwards ;
+        opacity: 0;
+        animation:fadeIn .5s forwards ;
         }
         @keyframes fadeIn {
-            from{
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to{
-                opacity: 1;
-                transform: translateY(0);
-            }
-            
+        from{
+        opacity: 0;
+        transform: translateY(10px);
         }
-    </style>
+        to{
+        opacity: 1;
+        transform: translateY(0);
+        }
+
+        }
+        </style>
+        =======
+        <link rel="stylesheet" href="./assets/bootstrap/css/posts-animation.css">
+        >>>>>>> main
 </head>
 
-<body>
+<body id="body">
 
     <!-- Navbar -->
 
@@ -108,7 +111,7 @@
                 <div class="col-md-6">
                     <!-- <h2 class="display-4 mb-4">turning <span class="text-primary"> Visions </span>into <span
                             class="text-success">Reality</span></h2> -->
-                            <h2 class="display-4 mb-4 " id="welcomeSentence"></h2>
+                    <h2 class="display-4 mb-4 " id="welcomeSentence"></h2>
                     <p class="lead text-muted mb-4">
                         "At CodNiper, we are committed to delivering vibrant and dynamic websites that not only
                         captivate the audience but also ensure optimal responsiveness across all devices.
@@ -329,79 +332,17 @@
     <!-- posts -->
     <div class="py-4" id="blog">
         <main class="container">
-            <h2 class="display-5 text-center mt-5">Newest</h2>
-            <p class="lead text-muted text-center mb-5">
+            <h2 class="display-5 text-center mt-5">Posts</h2>
+            <p class="lead text-muted text-center">
                 Explore our latest insights and tips on web design and development. Stay updated with the trends that
                 can elevate your online presence and enhance user experience.
             </p>
-            <div class="row">
-                <div class="col-lg-4 d-flex align-items-lg-stretch">
-                    <div class="card mb-3 shadow">
-                        <img src="./assets/img/landing-page/blog-image1.webp" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Last updated on 20224-08-26</small></p>
+            <div class="text-center my-3">
+                <button class="btn btn-outline-warning text-dark" onclick="sortByDate()">Date</button>
+                <button class="btn btn-outline-warning text-dark" onclick="sortByViews()">View</button>
+            </div>
+            <div class="row" id="posts-row">
 
-                            <p class="card-text mb-4">
-                                In this blog, we delve into a variety of topics that cater to both newcomers and
-                                seasoned professionals in the web development field. Each article is crafted to enhance
-                                your skills and knowledge, ensuring you're well-equipped for any project.
-                            </p>
-                            <a href="#"
-                                class="btn btn-warning d-block w-50 m-auto link-offset-2 link-underline link-underline-opacity-0 card-text fs-5">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                </svg>
-                                Read more
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 d-flex align-items-lg-stretch">
-                    <div class="card mb-3 shadow">
-                        <img src="./assets/img/landing-page/blog-image2.webp" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Last updated two weeks ago</small></p>
-                            <p class="card-text mb-4">
-                                This blog serves as an introduction to the latest trends and best practices in web
-                                design. Join us on a journey through insightful posts that will keep you informed about
-                                the tools and techniques shaping the future of web development.
-                            </p>
-                            <a href="#"
-                                class="btn btn-warning d-block w-50 m-auto link-offset-2 link-underline link-underline-opacity-0 card-text fs-5">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                </svg>
-                                Read more
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 d-flex align-items-lg-stretch">
-                    <div class="card mb-3 shadow">
-                        <img src="./assets/img/landing-page/blog-image3.webp" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Last updated 3 days ago</small></p>
-                            <p class="card-text mb-4">
-                                Here, we present an engaging overview of our discussions on web development frameworks
-                                and methodologies. Stay ahead of the curve with our regular updates on the latest
-                                innovations and practices that can optimize your workflow.
-                            </p>
-                            <a href="#"
-                                class="btn btn-warning d-block w-50 m-auto link-offset-2 link-underline link-underline-opacity-0 card-text fs-5">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                </svg>
-                                Read more
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </main>
     </div>
@@ -784,30 +725,32 @@
                     class="text-decoration-none text-secondary">CodNiper</a></div>
         </footer>
     </div>
-    <!-- <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+    <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/bootstrap/js/posts.js"></script>
 </body>
 <script>
- const sentence="turning Visions into Reality"
- const sentenceContainer=document.getElementById("welcomeSentence")
- const words=sentence.split(" ") 
- function displaySentence(){
-    words.forEach((word,index)=>{
-        const span=document.createElement("span")
-        span.className="sentence"
-        span.textContent=word
-        span.style.animationDelay=`${index*0.5}s`
-        if(index==1){
-            span.className="sentence text-primary"
-        }
-        if(index==3){
-            span.className="sentence text-success"
-  
-        }
-        span.style.marginRight="14px"
-        sentenceContainer.appendChild(span)
-    })
- }  
- window.onload=displaySentence() 
+    const sentence = "turning Visions into Reality"
+    const sentenceContainer = document.getElementById("welcomeSentence")
+    const words = sentence.split(" ")
+    function displaySentence() {
+        words.forEach((word, index) => {
+            const span = document.createElement("span")
+            span.className = "sentence"
+            span.textContent = word
+            span.style.animationDelay = `${index * 0.5}s`
+            if (index == 1) {
+                span.className = "sentence text-primary"
+            }
+            if (index == 3) {
+                span.className = "sentence text-success"
+
+            }
+            span.style.marginRight = "14px"
+            sentenceContainer.appendChild(span)
+        })
+    }
+    window.onload = displaySentence()
 
 </script>
+
 </html>
